@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Jasmine Financial Solutions</title>
 
@@ -17,28 +21,26 @@
     body {
       font-family: Arial, Helvetica, sans-serif;
       background: #fff8fc;
-      color: #29232a;
+      color: #2d1b29;
       line-height: 1.6;
     }
 
     header {
-      background:
-        linear-gradient(rgba(68, 12, 51, 0.82), rgba(68, 12, 51, 0.82)),
-        linear-gradient(135deg, #8d2d6f, #d88abf);
-
+      min-height: 100vh;
       color: white;
-      min-height: 90vh;
-      display: flex;
-      flex-direction: column;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(65, 9, 49, 0.96),
+          rgba(151, 31, 111, 0.91)
+        );
     }
 
     nav {
       width: 100%;
       max-width: 1200px;
       margin: auto;
-      margin-top: 0;
-      margin-bottom: 0;
-      padding: 22px 25px;
+      padding: 24px 28px;
 
       display: flex;
       justify-content: space-between;
@@ -46,15 +48,16 @@
     }
 
     .logo {
-      font-size: 1.55rem;
+      color: #ffd87a;
+      font-size: 1.45rem;
       font-weight: bold;
       letter-spacing: 1px;
     }
 
     .nav-links {
       display: flex;
+      gap: 24px;
       list-style: none;
-      gap: 22px;
     }
 
     .nav-links a {
@@ -64,35 +67,44 @@
     }
 
     .nav-links a:hover {
-      color: #ffd7ee;
+      color: #ffd87a;
     }
 
     .hero {
-      max-width: 1200px;
       width: 100%;
+      max-width: 1200px;
       margin: auto;
-      padding: 60px 25px 90px;
+      padding: 65px 28px 90px;
 
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 50px;
+      grid-template-columns: 1.1fr 0.9fr;
       align-items: center;
+      gap: 55px;
     }
 
-    .hero-text h1 {
-      font-size: clamp(2.7rem, 6vw, 5rem);
+    .hero-label {
+      color: #ffd87a;
+      font-weight: bold;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 6vw, 5.2rem);
       line-height: 1.05;
       margin-bottom: 22px;
     }
 
-    .hero-text h1 span {
-      color: #ffd1ea;
+    .hero h1 span {
+      color: #ffd87a;
     }
 
-    .hero-text p {
-      font-size: 1.2rem;
+    .hero-description {
       max-width: 650px;
+      font-size: 1.15rem;
       margin-bottom: 30px;
+      color: #ffeaf8;
     }
 
     .hero-buttons {
@@ -107,68 +119,65 @@
       border-radius: 30px;
       text-decoration: none;
       font-weight: bold;
-      border: 2px solid white;
       transition: 0.25s;
     }
 
     .button-primary {
-      background: white;
-      color: #6d2356;
+      background: #ffd87a;
+      color: #481036;
+      border: 2px solid #ffd87a;
     }
 
     .button-primary:hover {
-      background: #ffd7ee;
+      background: white;
+      border-color: white;
       transform: translateY(-2px);
     }
 
     .button-secondary {
       color: white;
-      background: transparent;
+      border: 2px solid white;
     }
 
     .button-secondary:hover {
+      color: #481036;
       background: white;
-      color: #6d2356;
+      transform: translateY(-2px);
     }
 
     .profile-card {
-      background: rgba(255, 255, 255, 0.14);
-      border: 1px solid rgba(255, 255, 255, 0.35);
-      border-radius: 30px;
-      padding: 35px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 28px;
+      padding: 24px;
       text-align: center;
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(10px);
     }
 
-    .profile-circle {
-      width: 210px;
-      height: 210px;
-      border-radius: 50%;
+    .profile-photo {
+      width: 100%;
+      max-width: 430px;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 22px;
+      border: 4px solid rgba(255, 255, 255, 0.85);
+      display: block;
       margin: 0 auto 22px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      background: linear-gradient(135deg, #ffd2ea, #ffffff);
-      color: #6d2356;
-      border: 7px solid rgba(255, 255, 255, 0.85);
-
-      font-size: 5rem;
-      font-weight: bold;
+      box-shadow: 0 18px 45px rgba(28, 3, 20, 0.38);
     }
 
     .profile-card h2 {
       font-size: 2rem;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .profile-card p {
-      color: #ffeaf6;
+      color: #ffe0f3;
     }
 
     section {
-      padding: 85px 25px;
+      padding: 85px 28px;
     }
 
     .container {
@@ -183,7 +192,7 @@
     }
 
     .section-heading p {
-      color: #8d2d6f;
+      color: #9d2f78;
       font-weight: bold;
       text-transform: uppercase;
       letter-spacing: 2px;
@@ -191,8 +200,8 @@
     }
 
     .section-heading h2 {
+      color: #421333;
       font-size: clamp(2rem, 4vw, 3rem);
-      color: #3e1733;
     }
 
     .services {
@@ -202,63 +211,67 @@
     .service-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
+      gap: 24px;
     }
 
     .service-card {
       background: #fff8fc;
-      border: 1px solid #f1d5e7;
+      border: 1px solid #f0d3e5;
       border-radius: 20px;
-      padding: 32px;
-      box-shadow: 0 10px 25px rgba(91, 24, 70, 0.08);
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(91, 20, 68, 0.08);
       transition: 0.25s;
     }
 
     .service-card:hover {
       transform: translateY(-7px);
-      box-shadow: 0 16px 35px rgba(91, 24, 70, 0.14);
+      box-shadow: 0 18px 40px rgba(91, 20, 68, 0.15);
     }
 
     .service-icon {
-      font-size: 2.3rem;
-      margin-bottom: 17px;
+      font-size: 2.4rem;
+      margin-bottom: 15px;
     }
 
     .service-card h3 {
-      color: #6d2356;
+      color: #7c205d;
+      font-size: 1.3rem;
       margin-bottom: 10px;
-      font-size: 1.35rem;
     }
 
     .about {
-      background: #f8e9f2;
+      background: #f8e7f2;
     }
 
     .about-grid {
       display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
+      grid-template-columns: 0.9fr 1.1fr;
       gap: 50px;
       align-items: center;
     }
 
     .about-box {
-      background: linear-gradient(135deg, #6d2356, #b34c8f);
-      color: white;
-      border-radius: 25px;
       padding: 45px 35px;
+      border-radius: 24px;
       text-align: center;
+      color: white;
+      background: linear-gradient(135deg, #5f1648, #b53887);
     }
 
-    .about-box .large-number {
-      font-size: 4.5rem;
-      font-weight: bold;
-      line-height: 1;
-      color: #ffd7ee;
+    .about-box .crown {
+      font-size: 3.3rem;
+      margin-bottom: 10px;
+    }
+
+    .about-box h3 {
+      color: #ffd87a;
+      font-size: 2rem;
+      margin-bottom: 12px;
     }
 
     .about-text h2 {
+      color: #421333;
       font-size: 2.5rem;
-      color: #3e1733;
       margin-bottom: 20px;
     }
 
@@ -278,34 +291,56 @@
 
     .step {
       text-align: center;
-      padding: 20px;
+      padding: 22px;
     }
 
     .step-number {
-      width: 65px;
-      height: 65px;
-      border-radius: 50%;
+      width: 64px;
+      height: 64px;
       margin: 0 auto 18px;
-
-      background: #6d2356;
-      color: white;
+      border-radius: 50%;
 
       display: flex;
       align-items: center;
       justify-content: center;
 
+      color: #481036;
+      background: #ffd87a;
       font-size: 1.5rem;
       font-weight: bold;
     }
 
     .step h3 {
-      color: #6d2356;
+      color: #7c205d;
       margin-bottom: 10px;
     }
 
-    .contact {
-      background: linear-gradient(135deg, #3e1733, #7b285f);
+    .quote-section {
       color: white;
+      text-align: center;
+      background: linear-gradient(135deg, #3e0c2f, #7d1b5d);
+    }
+
+    .quote-section blockquote {
+      max-width: 850px;
+      margin: auto;
+      color: #ffd87a;
+      font-family: Georgia, serif;
+      font-size: clamp(1.7rem, 4vw, 3rem);
+      font-style: italic;
+      line-height: 1.35;
+    }
+
+    .quote-section p {
+      margin-top: 20px;
+      color: #ffe9f7;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .contact {
+      color: white;
+      background: #2c0b22;
     }
 
     .contact-wrapper {
@@ -321,23 +356,23 @@
     }
 
     .contact-info p {
-      color: #f6ddeb;
+      color: #efd7e8;
       margin-bottom: 15px;
     }
 
     form {
       background: white;
-      padding: 32px;
+      color: #2d1b29;
       border-radius: 22px;
-      color: #29232a;
+      padding: 32px;
     }
 
     label {
       display: block;
+      color: #65194d;
       font-weight: bold;
       margin-top: 15px;
       margin-bottom: 6px;
-      color: #5a2348;
     }
 
     input,
@@ -345,10 +380,9 @@
     textarea {
       width: 100%;
       padding: 13px;
-      border: 1px solid #d9bfd0;
+      border: 1px solid #d7b8cd;
       border-radius: 10px;
-      font-size: 1rem;
-      font-family: inherit;
+      font: inherit;
     }
 
     textarea {
@@ -362,33 +396,44 @@
       padding: 15px;
       border: none;
       border-radius: 30px;
-      background: #6d2356;
-      color: white;
+      color: #481036;
+      background: #ffd87a;
       font-size: 1rem;
       font-weight: bold;
       cursor: pointer;
     }
 
     form button:hover {
-      background: #942f73;
+      background: #f2c24e;
+    }
+
+    #form-message {
+      margin-top: 12px;
+      color: #65194d;
+      font-weight: bold;
+      text-align: center;
     }
 
     .disclaimer {
-      background: #281020;
-      color: #d7becf;
-      padding: 28px 25px;
-      font-size: 0.83rem;
+      padding: 28px;
+      color: #cfb8c8;
+      background: #1c0716;
       text-align: center;
+      font-size: 0.83rem;
     }
 
     footer {
-      background: #190a14;
-      color: white;
-      text-align: center;
       padding: 22px;
+      color: white;
+      background: #11040d;
+      text-align: center;
     }
 
     @media (max-width: 850px) {
+      .nav-links {
+        display: none;
+      }
+
       .hero,
       .about-grid,
       .contact-wrapper {
@@ -399,7 +444,7 @@
         text-align: center;
       }
 
-      .hero-text p {
+      .hero-description {
         margin-left: auto;
         margin-right: auto;
       }
@@ -413,10 +458,6 @@
         grid-template-columns: 1fr;
       }
 
-      .nav-links {
-        display: none;
-      }
-
       header {
         min-height: auto;
       }
@@ -427,8 +468,11 @@
 <body>
 
   <header id="home">
+
     <nav>
-      <div class="logo">Jasmine Financial Solutions</div>
+      <div class="logo">
+        ♛ Jasmine Financial Solutions
+      </div>
 
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
@@ -438,50 +482,77 @@
       </ul>
     </nav>
 
+
     <div class="hero">
-      <div class="hero-text">
+
+      <div>
+        <p class="hero-label">
+          Jasmine Boss Mode
+        </p>
+
         <h1>
-          Helping families build a
-          <span>stronger financial future.</span>
+          Confident. Focused.
+          <span>Financially empowered.</span>
         </h1>
 
-        <p>
-          Jasmine helps individuals and families better understand life
-          insurance, saving, budgeting, and long-term financial planning.
+        <p class="hero-description">
+          Jasmine helps individuals and families understand
+          life insurance, budgeting, saving and long-term
+          financial planning.
         </p>
 
         <div class="hero-buttons">
-          <a href="#contact" class="button button-primary">
+
+          <a
+            href="#contact"
+            class="button button-primary"
+          >
             Schedule a Free Consultation
           </a>
 
-          <a href="#services" class="button button-secondary">
+          <a
+            href="#services"
+            class="button button-secondary"
+          >
             Explore Services
           </a>
+
         </div>
       </div>
 
+
       <div class="profile-card">
-        <!-- Replace this circle with Jasmine's photo later -->
-        <div class="profile-circle">J</div>
+
+        <img
+          src="jasmine-professional.png"
+          alt="Jasmine Financial Services Representative"
+          class="profile-photo"
+        >
 
         <h2>Meet Jasmine</h2>
 
         <p>
           Independent Financial Services Representative
         </p>
+
       </div>
+
     </div>
   </header>
 
 
   <section class="services" id="services">
+
     <div class="container">
 
       <div class="section-heading">
         <p>How Jasmine Can Help</p>
-        <h2>Financial guidance made easier to understand</h2>
+
+        <h2>
+          Financial guidance made easier to understand
+        </h2>
       </div>
+
 
       <div class="service-grid">
 
@@ -491,10 +562,11 @@
           <h3>Life Insurance Education</h3>
 
           <p>
-            Learn how term life insurance may help protect your family's
-            income and future financial responsibilities.
+            Learn how term life insurance may help protect
+            your family's income and future responsibilities.
           </p>
         </div>
+
 
         <div class="service-card">
           <div class="service-icon">💰</div>
@@ -502,10 +574,11 @@
           <h3>Budgeting Guidance</h3>
 
           <p>
-            Review your current expenses, financial goals, and opportunities
-            to create a more organized monthly plan.
+            Review expenses, savings goals and opportunities
+            to create a more organized financial plan.
           </p>
         </div>
+
 
         <div class="service-card">
           <div class="service-icon">📈</div>
@@ -513,10 +586,11 @@
           <h3>Retirement Planning</h3>
 
           <p>
-            Explore financial concepts and available options that may help
-            you prepare for long-term retirement goals.
+            Explore financial concepts and options that may
+            help you prepare for retirement.
           </p>
         </div>
+
 
         <div class="service-card">
           <div class="service-icon">🎓</div>
@@ -524,10 +598,11 @@
           <h3>College Savings</h3>
 
           <p>
-            Discuss ways families can begin planning ahead for future
+            Discuss ways to begin preparing for future
             education expenses.
           </p>
         </div>
+
 
         <div class="service-card">
           <div class="service-icon">👨‍👩‍👧‍👦</div>
@@ -535,10 +610,11 @@
           <h3>Family Financial Review</h3>
 
           <p>
-            Receive a personal review focused on your family's priorities,
-            concerns, and future financial goals.
+            Receive a personal review focused on your
+            family's goals and financial priorities.
           </p>
         </div>
+
 
         <div class="service-card">
           <div class="service-icon">💼</div>
@@ -546,7 +622,7 @@
           <h3>Business Opportunity</h3>
 
           <p>
-            Learn about building a part-time or full-time career as an
+            Learn about working part-time or full-time as an
             independent financial services representative.
           </p>
         </div>
@@ -557,33 +633,44 @@
 
 
   <section class="about" id="about">
+
     <div class="container about-grid">
 
       <div class="about-box">
-        <div class="large-number">1</div>
+        <div class="crown">♛</div>
 
-        <h3>Family at a Time</h3>
+        <h3>Boss Mode</h3>
 
         <p>
-          Jasmine's goal is to help people feel more confident when making
-          important financial decisions.
+          Confident. Focused. Disciplined. Unstoppable.
         </p>
       </div>
 
+
       <div class="about-text">
-        <h2>Financial education with a personal touch</h2>
+
+        <h2>
+          Financial education with a personal touch
+        </h2>
 
         <p>
-          Jasmine believes that financial information should not feel
-          confusing or intimidating. Her approach is centered on listening,
-          educating, and helping families understand their options.
+          Jasmine believes financial information should not
+          feel confusing or intimidating.
         </p>
 
         <p>
-          Whether someone is concerned about protecting their household,
-          saving for the future, or exploring a new business opportunity,
-          Jasmine provides a welcoming place to start the conversation.
+          Her approach is centered on listening, educating
+          and helping families better understand their
+          financial options.
         </p>
+
+        <p>
+          Whether someone wants to protect their household,
+          save for the future or explore a business
+          opportunity, Jasmine provides a welcoming place to
+          start.
+        </p>
+
       </div>
 
     </div>
@@ -591,12 +678,15 @@
 
 
   <section class="steps">
+
     <div class="container">
 
       <div class="section-heading">
         <p>Getting Started</p>
+
         <h2>Three simple steps</h2>
       </div>
+
 
       <div class="step-grid">
 
@@ -610,15 +700,18 @@
           </p>
         </div>
 
+
         <div class="step">
           <div class="step-number">2</div>
 
           <h3>Discuss Your Goals</h3>
 
           <p>
-            Talk about your family, finances, needs, and future plans.
+            Talk about your family, finances and future
+            plans.
           </p>
         </div>
+
 
         <div class="step">
           <div class="step-number">3</div>
@@ -626,7 +719,8 @@
           <h3>Review Your Options</h3>
 
           <p>
-            Receive information designed to help you make an informed decision.
+            Receive information to help you make an informed
+            decision.
           </p>
         </div>
 
@@ -635,78 +729,144 @@
   </section>
 
 
+  <section class="quote-section">
+
+    <div class="container">
+
+      <blockquote>
+        “I am not lucky — I am focused. I do not chase
+        opportunities; I build the confidence, discipline and
+        mindset to create them.”
+      </blockquote>
+
+      <p>JASMINE BOSS MODE</p>
+
+    </div>
+  </section>
+
+
   <section class="contact" id="contact">
+
     <div class="container contact-wrapper">
 
       <div class="contact-info">
-        <h2>Start your financial conversation</h2>
+
+        <h2>
+          Start your financial conversation
+        </h2>
 
         <p>
-          Complete the form to request a free financial consultation with
-          Jasmine.
+          Complete the form to request a free consultation
+          with Jasmine.
         </p>
 
         <p>
-          Meetings may be available virtually, by telephone, or in person.
+          Meetings may be available virtually, by telephone
+          or in person.
         </p>
+
       </div>
 
-      <form id="consultationForm">
 
-        <label for="name">Full Name</label>
+      <form id="consultation-form">
+
+        <label for="name">
+          Full Name
+        </label>
+
         <input
           type="text"
           id="name"
           placeholder="Enter your full name"
           required
-        />
+        >
 
-        <label for="phone">Phone Number</label>
+
+        <label for="phone">
+          Phone Number
+        </label>
+
         <input
           type="tel"
           id="phone"
           placeholder="Enter your phone number"
           required
-        />
+        >
 
-        <label for="email">Email Address</label>
+
+        <label for="email">
+          Email Address
+        </label>
+
         <input
           type="email"
           id="email"
           placeholder="Enter your email address"
           required
-        />
+        >
 
-        <label for="interest">What are you interested in?</label>
+
+        <label for="interest">
+          What are you interested in?
+        </label>
+
         <select id="interest" required>
-          <option value="">Choose an option</option>
-          <option>Life Insurance Information</option>
-          <option>Budgeting and Financial Planning</option>
-          <option>Retirement Planning</option>
-          <option>College Savings</option>
-          <option>Business Opportunity</option>
+
+          <option value="">
+            Choose an option
+          </option>
+
+          <option>
+            Life Insurance Information
+          </option>
+
+          <option>
+            Budgeting and Financial Planning
+          </option>
+
+          <option>
+            Retirement Planning
+          </option>
+
+          <option>
+            College Savings
+          </option>
+
+          <option>
+            Business Opportunity
+          </option>
+
         </select>
 
-        <label for="message">Message</label>
+
+        <label for="message">
+          Message
+        </label>
+
         <textarea
           id="message"
           placeholder="Tell Jasmine how she can help"
         ></textarea>
 
+
         <button type="submit">
           Request My Consultation
         </button>
 
+        <p id="form-message"></p>
+
       </form>
+
     </div>
   </section>
 
 
   <div class="disclaimer">
-    This website is for general educational and informational purposes only.
-    Financial products and services may require appropriate licensing and
-    approval. Replace this statement with Jasmine's official company,
-    licensing, compliance, and disclosure language before publishing.
+    This website is for general educational and informational
+    purposes only. Financial products and services may require
+    proper licensing and company approval. Add Jasmine's
+    official disclosures and approved company information
+    before publishing.
   </div>
 
 
@@ -718,20 +878,26 @@
 
 
   <script>
-    const consultationForm = document.getElementById("consultationForm");
+    const form = document.getElementById(
+      "consultation-form"
+    );
 
-    consultationForm.addEventListener("submit", function(event) {
+    const formMessage = document.getElementById(
+      "form-message"
+    );
+
+    form.addEventListener("submit", function(event) {
       event.preventDefault();
 
-      const customerName = document.getElementById("name").value;
+      const customerName =
+        document.getElementById("name").value;
 
-      alert(
+      formMessage.textContent =
         "Thank you, " +
         customerName +
-        "! Your consultation request has been received."
-      );
+        "! Your consultation request has been received.";
 
-      consultationForm.reset();
+      form.reset();
     });
   </script>
 
