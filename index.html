@@ -2,85 +2,1030 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Jasmine Financial Solutions helps families learn about protection, savings, retirement planning, and financial opportunities.">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
   <title>Jasmine Financial Solutions</title>
+
   <style>
-    :root{--dark:#2b0d22;--purple:#65154f;--pink:#c95b92;--light-pink:#fbe7ef;--gold:#d9aa5b;--light-gold:#f7e4b8;--white:#fff;--text:#322630;--muted:#6d5d66}
-    *{box-sizing:border-box;margin:0;padding:0;scroll-behavior:smooth}
-    body{font-family:Arial,Helvetica,sans-serif;background:#fff9fc;color:var(--text);line-height:1.6}
-    img{width:100%;display:block} a{text-decoration:none}.container{width:min(92%,1180px);margin:auto}
-    .navbar{position:sticky;top:0;z-index:1000;background:rgba(43,13,34,.96);border-bottom:1px solid rgba(217,170,91,.35);backdrop-filter:blur(10px)}
-    .nav-wrap{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.logo{color:#fff;font-weight:800;font-size:1.35rem}.logo span{color:var(--gold)}
-    .nav-links{display:flex;list-style:none;gap:26px}.nav-links a{color:#fff;font-weight:700}.nav-links a:hover{color:var(--gold)}
-    .hero{position:relative;overflow:hidden;color:#fff;padding:84px 0;background:radial-gradient(circle at top right,rgba(217,170,91,.22),transparent 34%),linear-gradient(135deg,var(--dark),var(--purple),#9c3d70)}
-    .hero-grid{min-height:660px;display:grid;grid-template-columns:1.05fr .95fr;gap:58px;align-items:center}.eyebrow{color:var(--gold);font-weight:800;text-transform:uppercase;letter-spacing:3px;margin-bottom:14px}
-    .hero h1{font-size:clamp(3rem,6vw,5.2rem);line-height:1.03;margin-bottom:22px}.hero h1 span{color:var(--gold)}.hero-copy{max-width:650px;font-size:1.12rem;color:#f9eaf3;margin-bottom:32px}
-    .buttons{display:flex;flex-wrap:wrap;gap:14px}.button{display:inline-block;padding:14px 24px;border-radius:999px;font-weight:800;transition:.25s;cursor:pointer}.button-primary{background:var(--gold);color:var(--dark);border:2px solid var(--gold)}.button-primary:hover{background:var(--light-gold);transform:translateY(-3px)}.button-secondary{color:#fff;border:2px solid #fff}.button-secondary:hover{background:#fff;color:var(--purple);transform:translateY(-3px)}
-    .hero-card{background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.23);border-radius:30px;padding:20px;box-shadow:0 28px 65px rgba(20,5,16,.35);backdrop-filter:blur(10px)}
-    .hero-image{height:560px;object-fit:cover;object-position:center top;border-radius:22px;border:4px solid var(--gold)}.hero-card h2{margin-top:20px;text-align:center;font-size:2rem}.hero-card p{text-align:center;color:var(--light-gold);margin-top:4px}
-    section{padding:90px 0}.section-heading{max-width:760px;margin:0 auto 50px;text-align:center}.section-label{color:var(--pink);text-transform:uppercase;letter-spacing:2px;font-weight:800;margin-bottom:8px}
-    .section-heading h2,.about-copy h2,.contact-copy h2{font-size:clamp(2.2rem,4vw,3.3rem);line-height:1.15;color:var(--dark)}.section-heading p:last-child{color:var(--muted);margin-top:14px}
-    .services{background:#fff}.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.service-card{background:#fff8fb;border:1px solid #efd4e2;border-radius:22px;padding:30px;box-shadow:0 12px 30px rgba(80,23,62,.08);transition:.25s}.service-card:hover{transform:translateY(-7px);box-shadow:0 18px 38px rgba(80,23,62,.14)}
-    .service-icon{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:var(--light-pink);font-size:1.8rem;margin-bottom:18px}.service-card h3{color:var(--purple);font-size:1.28rem;margin-bottom:9px}.service-card p{color:var(--muted)}
-    .about{background:linear-gradient(135deg,#fae8f1,#fff9fc)}.about-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:55px;align-items:center}.about-photo-card{background:linear-gradient(135deg,var(--dark),var(--purple));border-radius:28px;padding:18px;box-shadow:0 25px 55px rgba(73,17,55,.24)}
-    .about-photo{height:560px;object-fit:cover;object-position:center top;border-radius:20px;border:4px solid var(--gold)}.about-copy h2{margin-bottom:20px}.about-copy p{color:#5f5059;margin-bottom:16px}.quote{border-left:4px solid var(--gold);padding-left:18px;color:var(--purple)!important;font-weight:800;font-size:1.08rem;margin-top:22px}
-    .process{background:#fff}.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}.step{text-align:center;padding:26px}.step-number{width:70px;height:70px;border-radius:50%;margin:0 auto 20px;display:grid;place-items:center;background:var(--purple);color:var(--gold);font-size:1.55rem;font-weight:900;border:4px solid var(--light-pink)}.step h3{color:var(--purple);margin-bottom:9px}
-    .cta{padding:66px 0;color:#fff;background:linear-gradient(135deg,var(--pink),var(--purple))}.cta-wrap{display:flex;align-items:center;justify-content:space-between;gap:30px}.cta h2{font-size:clamp(2rem,4vw,3rem);line-height:1.15}.cta p{color:#f8eaf2;margin-top:7px}
-    .contact{background:var(--dark);color:#fff}.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:start}.contact-copy h2{color:var(--gold);margin-bottom:18px}.contact-copy p{color:#f1deea;margin-bottom:18px}.contact-list{list-style:none;margin-top:25px}.contact-list li{margin-bottom:12px;color:var(--light-gold)}
-    .contact-form{background:#fff;color:var(--text);border-radius:24px;padding:34px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}label{display:block;color:var(--purple);font-weight:800;margin-top:14px;margin-bottom:6px}input,select,textarea{width:100%;padding:13px;border:1px solid #d9bdce;border-radius:10px;background:#fffafd;font:inherit}input:focus,select:focus,textarea:focus{outline:3px solid rgba(201,91,146,.18);border-color:var(--pink)}textarea{min-height:120px;resize:vertical}.submit-button{width:100%;border:none;margin-top:22px;font-size:1rem}.form-message{min-height:25px;margin-top:14px;text-align:center;color:var(--purple);font-weight:800}
-    .disclaimer{padding:25px;background:#21101b;color:#d8c1d0;text-align:center;font-size:.84rem}footer{background:#150910;color:#fff;text-align:center;padding:22px}footer span{color:var(--gold)}
-    .reveal{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s ease}.reveal.show{opacity:1;transform:none}
-    @media(max-width:900px){.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.hero-grid{min-height:auto}.service-grid,.steps-grid{grid-template-columns:1fr 1fr}.hero-card,.about-photo-card{max-width:650px;margin:auto}.cta-wrap{flex-direction:column;text-align:center}}
-    @media(max-width:680px){.nav-links{display:none}.nav-wrap{min-height:68px}.hero{padding:55px 0}.hero h1{font-size:2.65rem}.buttons{flex-direction:column}.button{width:100%;text-align:center}.hero-image,.about-photo{height:auto}.service-grid,.steps-grid,.form-row{grid-template-columns:1fr}section{padding:66px 0}.contact-form{padding:24px 18px}}
+    :root {
+      --black: #080808;
+      --dark: #170911;
+      --pink: #ff2f93;
+      --pink-light: #ffb5d6;
+      --gold: #d9ad5b;
+      --white: #ffffff;
+      --gray: #d2d2d2;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1180px;
+      margin: auto;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(8, 8, 8, 0.96);
+      border-bottom: 1px solid rgba(255, 47, 147, 0.35);
+    }
+
+    .nav-content {
+      min-height: 74px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .logo {
+      color: white;
+      font-size: 1.35rem;
+      font-weight: 900;
+    }
+
+    .logo span {
+      color: var(--pink);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: white;
+      font-weight: bold;
+    }
+
+    .nav-links a:hover {
+      color: var(--pink);
+    }
+
+    /* BUTTONS */
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 999px;
+      background: var(--pink);
+      color: white;
+      border: 2px solid var(--pink);
+      font-weight: bold;
+      transition: 0.25s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      background: #ff5aa8;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .btn-outline:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 720px;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(255, 47, 147, 0.17),
+          transparent 34%
+        ),
+        linear-gradient(
+          135deg,
+          #050505,
+          #210c19,
+          #080808
+        );
+
+      padding: 90px 0;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      text-align: center;
+      margin: auto;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 7vw, 6.2rem);
+      line-height: 1;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 span {
+      color: var(--pink);
+    }
+
+    .hero p {
+      max-width: 780px;
+      margin: 0 auto 30px;
+      color: var(--gray);
+      font-size: 1.15rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    /* GENERAL SECTIONS */
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin: 0 auto 48px;
+      text-align: center;
+    }
+
+    .section-label {
+      color: var(--pink);
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      line-height: 1.1;
+      margin-bottom: 15px;
+    }
+
+    .section-heading p {
+      color: var(--gray);
+    }
+
+    /* SERVICES */
+
+    .services {
+      background: #0d0d0d;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      background: linear-gradient(180deg, #191919, #101010);
+      border: 1px solid rgba(255, 47, 147, 0.25);
+      border-radius: 22px;
+      padding: 28px;
+      transition: 0.25s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-7px);
+      border-color: var(--pink);
+    }
+
+    .service-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: rgba(255, 47, 147, 0.14);
+      font-size: 1.8rem;
+      margin-bottom: 18px;
+    }
+
+    .service-card h3 {
+      color: var(--pink);
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: var(--gray);
+    }
+
+    /* TWO OPTIONS */
+
+    .options {
+      background:
+        radial-gradient(
+          circle at 15% 25%,
+          rgba(255, 47, 147, 0.12),
+          transparent 30%
+        ),
+        #080808;
+    }
+
+    .option-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .option-card {
+      min-height: 430px;
+      border-radius: 26px;
+      padding: 38px;
+      background: #131313;
+      border: 1px solid rgba(255, 255, 255, 0.09);
+    }
+
+    .option-card.team {
+      border-color: rgba(217, 173, 91, 0.45);
+      background:
+        linear-gradient(
+          145deg,
+          #1d0b17,
+          #11100a
+        );
+    }
+
+    .option-tag {
+      display: inline-block;
+      color: var(--pink);
+      background: rgba(255, 47, 147, 0.13);
+      padding: 7px 13px;
+      border-radius: 999px;
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+
+    .team .option-tag {
+      color: var(--gold);
+      background: rgba(217, 173, 91, 0.13);
+    }
+
+    .option-card h3 {
+      font-size: 2rem;
+      line-height: 1.15;
+      margin-bottom: 15px;
+    }
+
+    .option-card p {
+      color: var(--gray);
+      margin-bottom: 20px;
+    }
+
+    .check-list {
+      list-style: none;
+      margin-bottom: 28px;
+    }
+
+    .check-list li {
+      margin-bottom: 12px;
+      color: #eeeeee;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      color: var(--pink);
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .team .check-list li::before {
+      color: var(--gold);
+    }
+
+    /* JOIN SECTION */
+
+    .join {
+      background:
+        linear-gradient(
+          135deg,
+          #ff2f93,
+          #9d0d59
+        );
+    }
+
+    .join-content {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .join h2 {
+      font-size: clamp(2.5rem, 5vw, 4.6rem);
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .join p {
+      font-size: 1.12rem;
+      margin-bottom: 18px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background: #090909;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 45px;
+      align-items: start;
+    }
+
+    .contact-copy h2 {
+      font-size: clamp(2.5rem, 5vw, 4.3rem);
+      line-height: 1.05;
+      margin-bottom: 18px;
+    }
+
+    .contact-copy p {
+      color: var(--gray);
+      margin-bottom: 16px;
+    }
+
+    .contact-form {
+      background: white;
+      color: #222;
+      padding: 34px;
+      border-radius: 24px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    label {
+      display: block;
+      color: #7d174d;
+      font-weight: bold;
+      margin-top: 14px;
+      margin-bottom: 6px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #d5b8c8;
+      border-radius: 10px;
+      font: inherit;
+      background: #fffafd;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      width: 100%;
+      border: none;
+      margin-top: 22px;
+      font-size: 1rem;
+    }
+
+    .form-message {
+      min-height: 25px;
+      text-align: center;
+      color: #8a1552;
+      font-weight: bold;
+      margin-top: 14px;
+    }
+
+    /* FINAL CTA WITH IMAGE */
+
+    .final-cta {
+      background:
+        linear-gradient(
+          135deg,
+          #160810,
+          #3d0e2c
+        );
+
+      padding: 90px 0;
+    }
+
+    .final-cta-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .final-cta-text h2 {
+      font-size: clamp(2.5rem, 5vw, 4.3rem);
+      line-height: 1.08;
+      margin-bottom: 20px;
+    }
+
+    .final-cta-text p {
+      color: var(--pink-light);
+      font-size: 1.15rem;
+      margin-bottom: 28px;
+    }
+
+    .final-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .final-image {
+      background: #111;
+      padding: 14px;
+      border-radius: 28px;
+      border: 1px solid rgba(217, 173, 91, 0.5);
+      box-shadow: 0 28px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .final-image img {
+      border-radius: 20px;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    /* FOOTER */
+
+    .disclaimer {
+      padding: 25px;
+      background: #160d13;
+      color: #cbbbc4;
+      text-align: center;
+      font-size: 0.84rem;
+    }
+
+    footer {
+      padding: 22px;
+      background: #050505;
+      text-align: center;
+    }
+
+    footer span {
+      color: var(--pink);
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 950px) {
+      .service-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .option-grid,
+      .contact-grid,
+      .final-cta-content {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+      }
+
+      .hero-buttons,
+      .final-buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .service-grid,
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 68px 0;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <nav class="navbar"><div class="container nav-wrap"><a href="#home" class="logo">Jasmine <span>Financial Solutions</span></a><ul class="nav-links"><li><a href="#home">Home</a></li><li><a href="#services">Services</a></li><li><a href="#about">About Jasmine</a></li><li><a href="#contact">Contact</a></li></ul></div></nav>
 
-  <header class="hero" id="home"><div class="container hero-grid"><div class="reveal"><p class="eyebrow">Plan. Protect. Prosper.</p><h1>Helping families build a <span>stronger financial future.</span></h1><p class="hero-copy">Jasmine helps individuals and families understand life insurance, saving, retirement planning, investments, and financial opportunities in a simple, welcoming, and professional way.</p><div class="buttons"><a href="#contact" class="button button-primary">Schedule a Free Consultation</a><a href="#services" class="button button-secondary">Explore Services</a></div></div><div class="hero-card reveal"><img src="8912.png" alt="Jasmine Financial Solutions" class="hero-image"><h2>Meet Jasmine</h2><p>Independent Financial Services Representative</p></div></div></header>
+  <nav>
+    <div class="container nav-content">
 
-  <section class="services" id="services"><div class="container"><div class="section-heading reveal"><p class="section-label">How Jasmine Can Help</p><h2>Financial guidance made easier to understand</h2><p>Learn about financial concepts and options that may help you protect your household, prepare for the future, and build confidence.</p></div><div class="service-grid">
-    <article class="service-card reveal"><div class="service-icon">🛡️</div><h3>Life Insurance Education</h3><p>Learn how term life insurance may help protect your family's income and future responsibilities.</p></article>
-    <article class="service-card reveal"><div class="service-icon">📈</div><h3>Investments</h3><p>Explore basic investment concepts and strategies that may support your long-term financial goals.</p></article>
-    <article class="service-card reveal"><div class="service-icon">💰</div><h3>Savings Guidance</h3><p>Create clearer savings goals for emergencies, education, retirement, and other important milestones.</p></article>
-    <article class="service-card reveal"><div class="service-icon">🧾</div><h3>Financial Planning</h3><p>Review your priorities, expenses, protection needs, and future goals in one organized conversation.</p></article>
-    <article class="service-card reveal"><div class="service-icon">👨‍👩‍👧‍👦</div><h3>Family Financial Review</h3><p>Discuss your household's concerns and receive educational information about available financial options.</p></article>
-    <article class="service-card reveal"><div class="service-icon">💼</div><h3>Business Opportunity</h3><p>Learn about building a part-time or full-time career as an independent financial services representative.</p></article>
-  </div></div></section>
+      <a href="#home" class="logo">
+        Jasmine <span>Financial Solutions</span>
+      </a>
 
-  <section class="about" id="about"><div class="container about-grid"><div class="about-photo-card reveal"><img src="8913.png" alt="Jasmine Financial Solutions professional portrait" class="about-photo"></div><div class="about-copy reveal"><p class="section-label">About Jasmine</p><h2>Financial education with a personal touch</h2><p>Jasmine believes financial information should not feel confusing or intimidating. Her approach begins with listening, educating, and helping people better understand the options available to them.</p><p>Whether someone is interested in protecting their family, saving for the future, planning for retirement, learning about investments, or exploring a business opportunity, Jasmine provides a welcoming place to begin.</p><p>Her goal is to help people feel more confident when making important financial decisions for themselves and their families.</p><p class="quote">Smart decisions today can help build a stronger tomorrow.</p></div></div></section>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#options">Choose Your Path</a></li>
+        <li><a href="#join">Join the Team</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
 
-  <section class="process"><div class="container"><div class="section-heading reveal"><p class="section-label">Getting Started</p><h2>Three simple steps</h2></div><div class="steps-grid"><div class="step reveal"><div class="step-number">1</div><h3>Schedule a Meeting</h3><p>Choose a convenient time to speak with Jasmine.</p></div><div class="step reveal"><div class="step-number">2</div><h3>Discuss Your Goals</h3><p>Talk about your financial needs, concerns, and future plans.</p></div><div class="step reveal"><div class="step-number">3</div><h3>Review Your Options</h3><p>Receive information that may help you make an informed decision.</p></div></div></div></section>
+    </div>
+  </nav>
 
-  <section class="cta"><div class="container cta-wrap reveal"><div><h2>Ready to start your financial conversation?</h2><p>Request a free consultation with Jasmine today.</p></div><a href="#contact" class="button button-primary">Contact Jasmine</a></div></section>
 
-  <section class="contact" id="contact"><div class="container contact-grid"><div class="contact-copy reveal"><p class="eyebrow">Contact Jasmine</p><h2>Start building toward your goals</h2><p>Complete this form to request a financial consultation. Meetings may be available virtually, by telephone, or in person.</p><ul class="contact-list"><li>✓ Personalized conversation</li><li>✓ Financial education</li><li>✓ Family-focused guidance</li><li>✓ No-pressure consultation</li></ul></div><form class="contact-form reveal" id="consultationForm"><div class="form-row"><div><label for="name">Full Name</label><input type="text" id="name" placeholder="Enter your full name" required></div><div><label for="phone">Phone Number</label><input type="tel" id="phone" placeholder="Enter your phone number" required></div></div><label for="email">Email Address</label><input type="email" id="email" placeholder="Enter your email address" required><label for="interest">What are you interested in?</label><select id="interest" required><option value="">Choose an option</option><option>Life Insurance Information</option><option>Investments</option><option>Savings and Financial Planning</option><option>Retirement Planning</option><option>Business Opportunity</option></select><label for="message">Message</label><textarea id="message" placeholder="Tell Jasmine how she can help"></textarea><button type="submit" class="button button-primary submit-button">Request My Consultation</button><p id="formMessage" class="form-message" aria-live="polite"></p></form></div></section>
+  <header class="hero" id="home">
+    <div class="container hero-content">
 
-  <div class="disclaimer">This website is for general educational and informational purposes only. Financial products and services may require proper licensing, company approval, and required disclosures. Add Jasmine's official licensing, company, compliance, privacy, and disclosure information before using this website for business.</div>
-  <footer><p>© 2026 <span>Jasmine Financial Solutions</span>. All rights reserved.</p></footer>
+      <p class="eyebrow">
+        Plan Today. Protect Tomorrow. Prosper Always.
+      </p>
+
+      <h1>
+        Protect Your Family.
+        <span>Build Your Business.</span>
+      </h1>
+
+      <p>
+        Jasmine Financial Solutions helps individuals and families
+        learn about life insurance, savings, investments, retirement
+        planning, and financial protection. Jasmine also helps motivated
+        people explore an opportunity to build a business helping others.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="#contact" class="btn">
+          Get a Free Consultation
+        </a>
+
+        <a href="#join" class="btn btn-outline">
+          Learn About Joining the Team
+        </a>
+
+      </div>
+
+    </div>
+  </header>
+
+
+  <section class="services" id="services">
+    <div class="container">
+
+      <div class="section-heading">
+
+        <p class="section-label">
+          Financial Services
+        </p>
+
+        <h2>
+          Protect what matters and prepare for the future
+        </h2>
+
+        <p>
+          Start with financial education and learn about solutions
+          that may support your household and long-term goals.
+        </p>
+
+      </div>
+
+
+      <div class="service-grid">
+
+        <article class="service-card">
+          <div class="service-icon">🛡️</div>
+
+          <h3>Life Insurance</h3>
+
+          <p>
+            Learn about coverage options that may help protect
+            your family and financial responsibilities.
+          </p>
+        </article>
+
+
+        <article class="service-card">
+          <div class="service-icon">📈</div>
+
+          <h3>Investments</h3>
+
+          <p>
+            Explore investment concepts and strategies that may
+            support your long-term financial goals.
+          </p>
+        </article>
+
+
+        <article class="service-card">
+          <div class="service-icon">💰</div>
+
+          <h3>Savings</h3>
+
+          <p>
+            Build clearer savings goals for emergencies, education,
+            retirement, and other important milestones.
+          </p>
+        </article>
+
+
+        <article class="service-card">
+          <div class="service-icon">👨‍👩‍👧‍👦</div>
+
+          <h3>Financial Planning</h3>
+
+          <p>
+            Review your priorities and receive education about
+            financial options that may fit your needs.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="options" id="options">
+    <div class="container">
+
+      <div class="section-heading">
+
+        <p class="section-label">
+          Choose Your Path
+        </p>
+
+        <h2>
+          Become a client or build with the team
+        </h2>
+
+        <p>
+          You do not have to buy insurance to learn about joining
+          Jasmine's team. Choose the path that fits your goals.
+        </p>
+
+      </div>
+
+
+      <div class="option-grid">
+
+        <article class="option-card">
+
+          <span class="option-tag">
+            Financial Services
+          </span>
+
+          <h3>
+            Protect your family and plan your future
+          </h3>
+
+          <p>
+            Meet with Jasmine to discuss your financial priorities
+            and learn about available products and strategies.
+          </p>
+
+          <ul class="check-list">
+            <li>Life insurance education</li>
+            <li>Savings and retirement guidance</li>
+            <li>Investment information</li>
+            <li>Personalized financial review</li>
+          </ul>
+
+          <a href="#contact" class="btn">
+            Book a Free Consultation
+          </a>
+
+        </article>
+
+
+        <article class="option-card team">
+
+          <span class="option-tag">
+            Business Opportunity
+          </span>
+
+          <h3>
+            Build a business helping families
+          </h3>
+
+          <p>
+            Learn how independent representatives may build a
+            part-time or full-time business by educating families
+            and helping connect them with financial solutions.
+          </p>
+
+          <ul class="check-list">
+            <li>Training and mentorship</li>
+            <li>Flexible schedule</li>
+            <li>Leadership opportunities</li>
+            <li>Licensing guidance where required</li>
+          </ul>
+
+          <a href="#join" class="btn btn-outline">
+            Learn About Joining
+          </a>
+
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="join" id="join">
+    <div class="container join-content">
+
+      <h2>
+        Not looking to buy insurance? You can still join the team.
+      </h2>
+
+      <p>
+        If you are motivated, coachable, enjoy helping people,
+        and want to explore a flexible business opportunity,
+        Jasmine can explain the training process, licensing
+        requirements, expenses, and how compensation works.
+      </p>
+
+      <p>
+        No earnings are guaranteed, and results vary based on
+        training, licensing, effort, experience, and other factors.
+      </p>
+
+      <a href="#contact" class="btn btn-outline">
+        Ask About the Business Opportunity
+      </a>
+
+    </div>
+  </section>
+
+
+  <section class="contact" id="contact">
+    <div class="container contact-grid">
+
+      <div class="contact-copy">
+
+        <p class="section-label">
+          Contact Jasmine
+        </p>
+
+        <h2>
+          Tell Jasmine which path interests you
+        </h2>
+
+        <p>
+          Choose financial services, joining the team, or both.
+        </p>
+
+        <p>
+          Jasmine will contact you to answer your questions and
+          explain the next steps.
+        </p>
+
+      </div>
+
+
+      <form class="contact-form" id="contactForm">
+
+        <div class="form-row">
+
+          <div>
+            <label for="name">Full Name</label>
+
+            <input
+              id="name"
+              type="text"
+              placeholder="Enter your name"
+              required
+            >
+          </div>
+
+
+          <div>
+            <label for="phone">Phone Number</label>
+
+            <input
+              id="phone"
+              type="tel"
+              placeholder="Enter your phone number"
+              required
+            >
+          </div>
+
+        </div>
+
+
+        <label for="email">Email Address</label>
+
+        <input
+          id="email"
+          type="email"
+          placeholder="Enter your email address"
+          required
+        >
+
+
+        <label for="interest">
+          What are you interested in?
+        </label>
+
+        <select id="interest" required>
+
+          <option value="">
+            Choose an option
+          </option>
+
+          <option>
+            Life Insurance or Financial Services
+          </option>
+
+          <option>
+            Joining Jasmine's Team
+          </option>
+
+          <option>
+            Both Financial Services and Joining the Team
+          </option>
+
+          <option>
+            I Am Not Sure Yet
+          </option>
+
+        </select>
+
+
+        <label for="message">
+          Message
+        </label>
+
+        <textarea
+          id="message"
+          placeholder="Tell Jasmine about your goals or questions"
+        ></textarea>
+
+
+        <button
+          type="submit"
+          class="btn submit-btn"
+        >
+          Send My Request
+        </button>
+
+
+        <p
+          id="formMessage"
+          class="form-message"
+        ></p>
+
+      </form>
+
+    </div>
+  </section>
+
+
+  <section class="final-cta">
+
+    <div class="container final-cta-content">
+
+      <div class="final-cta-text">
+
+        <h2>
+          Ready to Protect Your Family or Build Your Business?
+        </h2>
+
+        <p>
+          Let's talk about your goals and find the right path for you.
+        </p>
+
+        <div class="final-buttons">
+
+          <a href="#contact" class="btn">
+            Book a Free Consultation
+          </a>
+
+          <a href="#join" class="btn btn-outline">
+            Learn About the Business Opportunity
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="final-image">
+
+        <img
+          src="8928.jpg"
+          alt="Jasmine Financial Solutions"
+        >
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <div class="disclaimer">
+
+    This website is for general educational and informational purposes
+    only. Financial products and services may require proper licensing,
+    company approval, suitability review, and required disclosures.
+    The business opportunity may involve licensing, training, expenses,
+    independent-contractor status, and variable compensation. Earnings
+    are not guaranteed. Add all official company and compliance
+    disclosures before using this website for business.
+
+  </div>
+
+
+  <footer>
+
+    <p>
+      © 2026
+      <span>Jasmine Financial Solutions</span>.
+      All rights reserved.
+    </p>
+
+  </footer>
+
+
   <script>
-    const form=document.getElementById('consultationForm');const formMessage=document.getElementById('formMessage');form.addEventListener('submit',function(e){e.preventDefault();const name=document.getElementById('name').value.trim();formMessage.textContent='Thank you, '+name+'! Your consultation request is ready.';form.reset();});
-    const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('show');observer.unobserve(entry.target);}})},{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+    const form =
+      document.getElementById("contactForm");
+
+    const formMessage =
+      document.getElementById("formMessage");
+
+    form.addEventListener("submit", function(event) {
+
+      event.preventDefault();
+
+      const name =
+        document.getElementById("name").value.trim();
+
+      const interest =
+        document.getElementById("interest").value;
+
+      formMessage.textContent =
+        "Thank you, " +
+        name +
+        "! Your request about " +
+        interest +
+        " is ready.";
+
+      form.reset();
+
+    });
   </script>
+
 </body>
 </html>
-<section class="cta">
-
-<h2>
-Ready to Protect Your Family or Build Your Business?
-</h2>
-
-<p>
-Let's talk about your goals and find the right path for you.
-</p>
-
-<a href="#contact" class="btn">
-Book a Free Consultation
-</a>
-
-<a href="#join" class="btn btn-outline">
-Learn About the Business Opportunity
-</a>
-
-</section>
